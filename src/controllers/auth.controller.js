@@ -22,7 +22,7 @@ const { AppError, asyncHandler, sendSuccess } = require('../utils/apiHelpers');
 // ── Helper: generate JWT access token ──────────────────
 // The token is signed with your JWT_SECRET and expires in 15 min
 const signAccessToken = (userId) =>
-  jwt.sign({ id: userId }, process.env.JWT_SECRET, { expiresIn: process.env.JWT_ACCESS_EXPIRES || '15m' });
+  jwt.sign({ id: userId }, process.env.JWT_ACCESS_SECRET, { expiresIn: process.env.JWT_ACCESS_EXPIRES || '15m' });
 
 // ── Helper: generate refresh token ─────────────────────
 // Longer-lived token used to get a new access token without re-login
